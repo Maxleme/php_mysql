@@ -2,14 +2,14 @@
 
 class Produto
 {
-    private int $id;
+    private ?int $id;
     private string $nome;
     private string $tipo;
     private string $descricao;
     private string $imagem;
     private float $preco;
 
-    public function __construct(int $id, string $nome, string $tipo, string $descricao, string $imagem, float $preco) {
+    public function __construct(?int $id, string $nome, string $tipo, string $descricao, float $preco, string $imagem = "logo-serenatto.png") {
         $this->id = $id;
         $this->nome = $nome;
         $this->tipo = $tipo;
@@ -50,4 +50,5 @@ class Produto
     {
         return 'R$ '.number_format($this->preco, 2);
     }
+   
 }
