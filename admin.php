@@ -1,11 +1,11 @@
 <?php 
 
-require "src/conexao.php";
-require "src/Model/Produto.php";
-require "src/Repository/ProdutoRepositorio.php";
+  require "src/conexao.php";
+  require "src/Model/Produto.php";
+  require "src/Repository/ProdutoRepositorio.php";
 
-$repository = new ProdutoRepositorio($pdo);
-$todosProdtos = $repository->todosProdutos();
+  $repository = new ProdutoRepositorio($pdo);
+  $todosProdtos = $repository->todosProdutos();
 
 ?>
 
@@ -53,7 +53,7 @@ $todosProdtos = $repository->todosProdutos();
         <td><?= $produto->getTipo() ?></td>
         <td><?= $produto->getDescricao() ?></td>
         <td><?= $produto->getPrecoFormatado() ?></td>
-        <td><a class="botao-editar" href="editar-produto.html">Editar</a></td>
+        <td><a class="botao-editar" href="editar-produto.php?id=<?= $produto->getId() ?>">Editar</a></td>
         <td>
           <form action="excluir-produto.php" method="post">
             <input type="hidden" name="id" value="<?= $produto->getId() ?>">
